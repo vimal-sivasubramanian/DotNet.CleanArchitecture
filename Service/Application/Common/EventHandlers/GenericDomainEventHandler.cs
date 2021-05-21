@@ -8,6 +8,11 @@ namespace DotNet.EventSourcing.Service.Application.Common.EventHandlers
 {
     public class GenericDomainEventHandler : INotificationHandler<EventNotification<DomainEvent>>
     {
+        public GenericDomainEventHandler()
+        {
+
+        }
+
         public Task Handle(EventNotification<DomainEvent> notification, CancellationToken cancellationToken)
         {
             return Task.CompletedTask;

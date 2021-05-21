@@ -24,19 +24,15 @@ namespace DotNet.EventSourcing.Service.Infrastructure.Services
         {
             foreach (var @event in events)
             {
-                if (@event is DomainEvent domainEvent)
-                {
-                    _logger.LogInformation("Publishing domain event. Event - {event}", domainEvent.GetType().Name);
-                    await _mediator.Publish(GetNotificationCorrespondingToDomainEvent(domainEvent));
-                }
-                //else if (@event is IntegrationEvent integrationEvent) { }
+                _logger.LogInformation($"Publishing {@event.GetType().Name} event");
+                await _mediator.Publish(GetNotificationCorrespondingToDomainEvent(@event));
             }
         }
 
-        private INotification GetNotificationCorrespondingToDomainEvent(DomainEvent domainEvent)
+        private INotification GetNotificationCorrespondingToDomainEvent(IEvent @event)
         {
             return (INotification)Activator.CreateInstance(
-                typeof(EventNotification<>).MakeGenericType(domainEvent.GetType()), domainEvent);
+                typeof(EventNotification<>).MakeGenericType(@event.GetType()), @event);
         }
     }
 }
