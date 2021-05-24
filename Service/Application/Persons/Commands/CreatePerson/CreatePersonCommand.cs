@@ -21,12 +21,12 @@ namespace DotNet.EventSourcing.Service.Application.Persons.Commands.CreatePerson
     public class CreatePersonHandler : IRequestHandler<CreatePersonCommand, Unit>
     {
         private readonly IApplicationDbContext _dbContext;
-        private readonly IEventProcessor _eventProcessor;
+        private readonly IEventPublisher _eventPublisher;
 
-        public CreatePersonHandler(IApplicationDbContext dbContext, IEventProcessor eventProcessor)
+        public CreatePersonHandler(IApplicationDbContext dbContext, IEventPublisher eventPublisher)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
-            _eventProcessor = eventProcessor ?? throw new ArgumentNullException(nameof(eventProcessor));
+            _eventPublisher = eventPublisher ?? throw new ArgumentNullException(nameof(eventPublisher));
         }
 
         public async Task<Unit> Handle(CreatePersonCommand request, CancellationToken cancellationToken)
@@ -42,7 +42,7 @@ namespace DotNet.EventSourcing.Service.Application.Persons.Commands.CreatePerson
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            await _eventProcessor.Publish(new PersonEvent(PersonEvent.Types.Created, person));
+            await _eventPublisher.Publish(new PersonEvent(PersonEvent.Types.Created, person));
 
             return Unit.Value;
 

@@ -1,9 +1,12 @@
-﻿using DotNet.EventSourcing.Service.Application.Interfaces;
+﻿using DotNet.EventSourcing.Core.Events;
+using DotNet.EventSourcing.MessageBrokers;
+using DotNet.EventSourcing.Service.Application.Interfaces;
+using DotNet.EventSourcing.Service.Infrastructure.Persistence;
 using DotNet.EventSourcing.Service.Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using DotNet.EventSourcing.Service.Infrastructure.Persistence;
+using System;
 
 namespace DotNet.EventSourcing.Service.Infrastructure
 {
@@ -17,7 +20,9 @@ namespace DotNet.EventSourcing.Service.Infrastructure
                            b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
-            services.AddScoped<IEventProcessor, EventProcessor>();
+            services.AddScoped<IEventPublisher, EventPublisher>();
+
+            services.AddMessageBusSender<Guid, EventBase>(configuration.GetSection(nameof(MessageBrokerOptions)).Get<MessageBrokerOptions>());
         }
     }
 }

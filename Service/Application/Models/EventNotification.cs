@@ -1,9 +1,9 @@
-﻿using DotNet.EventSourcing.Service.Domain.Events;
+﻿using DotNet.EventSourcing.Core.Events;
 using MediatR;
 
 namespace DotNet.EventSourcing.Service.Application.Models
 {
-    public class EventNotification<TEvent> : INotification where TEvent : class, IEvent
+    public class EventNotification<TEvent> : INotification where TEvent : EventBase
     {
         public TEvent Event { get; set; }
 

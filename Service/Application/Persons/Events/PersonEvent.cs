@@ -1,9 +1,10 @@
-﻿using DotNet.EventSourcing.Service.Domain.Entities;
-using DotNet.EventSourcing.Service.Domain.Events;
+﻿using DotNet.EventSourcing.Core;
+using DotNet.EventSourcing.Core.Events;
+using DotNet.EventSourcing.Service.Domain.Entities;
 
 namespace DotNet.EventSourcing.Service.Application.Persons.Events
 {
-    public class PersonEvent : DomainEvent
+    public class PersonEvent : EventBase
     {
         internal class Types
         {
@@ -13,8 +14,8 @@ namespace DotNet.EventSourcing.Service.Application.Persons.Events
         public PersonEvent(string eventName, Person person)
         {
             EventName = eventName;
-            Entity = person.ToJson();
-            EntityType = nameof(Person);
+            Payload = person.ToJson();
+            Type = nameof(Person);
         }
     }
 }
