@@ -1,7 +1,9 @@
 using DotNet.EventSourcing.Service.Application;
 using DotNet.EventSourcing.Service.Infrastructure;
+using DotNet.EventSourcing.Service.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,7 +33,7 @@ namespace DotNet.EventSourcing.Service.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationDbContext datacontext)
         {
             if (env.IsDevelopment())
             {
@@ -39,7 +41,7 @@ namespace DotNet.EventSourcing.Service.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1"));
             }
-
+            datacontext.Database.Migrate();
             app.UseHttpsRedirection();
 
             app.UseRouting();

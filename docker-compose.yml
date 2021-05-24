@@ -1,0 +1,34 @@
+version: '3'
+services:
+  ms-sql-server:
+     image: microsoft/mssql-server-linux:2017-latest 
+     environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "S!wan246151"
+       MSSQL_PID: Express
+     ports:
+       - "1433:1433"
+  evt-api:
+     build:
+      context: .
+      dockerfile: Dockerfile
+     ports:
+      - "9080:80"
+     environment:
+      TZ: Asia/Kolkata
+     volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+  rabbitmq: # login guest:guest
+    image: rabbitmq:3-management
+    hostname: "my-rabbit"
+    labels:
+      NAME: "my-rabbit"
+    ports:
+    - "4369:4369"
+    - "5671:5671"
+    - "5672:5672"
+    - "25672:25672"
+    - "15671:15671"
+    - "15672:15672"
+ 
