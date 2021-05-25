@@ -16,7 +16,7 @@ namespace EventsStorage
         }
 
         [Function(nameof(EventStorage))]
-        public void Run([EventHubTrigger("vs-eventsourcing-eventhub", Connection = "EventHubConnectionAppSetting")] string[] messages, FunctionContext context)
+        public void Run([EventHubTrigger("vs-eventsourcing-eventhub", Connection = "EventHubConnectionString")] string[] messages, FunctionContext context)
         {
             var logger = context.GetLogger("KafkaFunction");
             foreach (var message in messages)
