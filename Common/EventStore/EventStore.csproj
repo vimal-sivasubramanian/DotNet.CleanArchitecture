@@ -1,16 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-	  <RootNamespace>DotNet.EventSourcing.EventStore</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<RootNamespace>DotNet.EventSourcing.EventStore</RootNamespace>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="EventStore.Client.Grpc.Streams" Version="21.2.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="EventStore.Client" Version="21.2.0" />
+		<PackageReference Include="EventStore.Client.Grpc.Streams" Version="21.2.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Core\Core.csproj" />
+	</ItemGroup>
 
 </Project>

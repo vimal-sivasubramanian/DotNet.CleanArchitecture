@@ -1,4 +1,5 @@
 ﻿using Confluent.Kafka;
+using DotNet.EventSourcing.Core;
 using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
 using System;
 using System.Threading;
@@ -8,7 +9,7 @@ namespace DotNet.EventSourcing.MessageBrokers.Kafka
 {
     public class KafkaReceiver<TKey, TValue> : IMessageReceiver<TKey, TValue>, IDisposable
     {
-        private readonly IConsumer<TKey, TValue> _consumer;
+        private readonly IConsumer<string, string> _consumer;
 
         public KafkaReceiver(string bootstrapServers, string topic, string groupId)
         {
@@ -19,7 +20,7 @@ namespace DotNet.EventSourcing.MessageBrokers.Kafka
                 AutoOffsetReset = AutoOffsetReset.Earliest,
             };
 
-            _consumer = new ConsumerBuilder<TKey, TValue>(config)
+            _consumer = new ConsumerBuilder<string, string>(config)
                 .Build();
             _consumer.Subscribe(topic);
         }
@@ -61,7 +62,7 @@ namespace DotNet.EventSourcing.MessageBrokers.Kafka
                         continue;
                     }
 
-                    action(new Core.Models.Message<TKey, TValue> { Key = consumeResult.Message.Key, Value = consumeResult.Message.Value });
+                    action(new Core.Models.Message<TKey, TValue> { Key = consumeResult.Message.Key.To<TKey>(), Value = consumeResult.Message.Value.To<TValue>() });
                 }
                 catch (ConsumeException e)
                 {

@@ -1,27 +1,30 @@
+using DotNet.EventSourcing.Core;
 using DotNet.EventSourcing.Core.Events;
 using DotNet.EventSourcing.Core.Interfaces;
-using DotNet.EventSourcing.Core.Models;
-using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Events.Storage
+namespace EventsStorage
 {
     public class EventStorage
     {
         private readonly IEventStore _eventStore;
 
-        public EventStorage(IEventStore eventStore) => _eventStore = eventStore;
-
-        [FunctionName(nameof(EventStorage))]
-        public async ValueTask Run([RabbitMQTrigger("app-events", ConnectionStringSetting = "RabbitMqConnection")]string eventPayload, ILogger logger)
+        public EventStorage(IEventStore eventStore)
         {
-            var @event = JsonConvert.DeserializeObject<Message<dynamic, EventBase>>(eventPayload);
+            _eventStore = eventStore;
+        }
 
-            logger.LogDebug($"Attempting to append the {@event.Value.EventName} event to EventStore");
+        [Function(nameof(EventStorage))]
+        public void Run([EventHubTrigger("vs-eventsourcing-eventhub", Connection = "EventHubConnectionAppSetting")] string[] messages, FunctionContext context)
+        {
+            var logger = context.GetLogger("KafkaFunction");
+            foreach (var message in messages)
+            {
+                logger.LogDebug($"C# Kafka trigger function processed a message: {message}");
 
-            await _eventStore.AppendAsync(@event.Value);
+                _eventStore.AppendAsync(message.To<EventBase>()).GetAwaiter().GetResult();
+            }
         }
     }
 }
