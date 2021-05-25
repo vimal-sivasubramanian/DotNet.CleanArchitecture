@@ -1,0 +1,21 @@
+version: '3'
+services:
+  ms-sql-server:
+     image: microsoft/mssql-server-linux:2017-latest 
+     environment:
+       ACCEPT_EULA: "Y"
+       MSSQL_SA_PASSWORD: "W3lC0m3@123"
+     ports:
+       - "1433:1433"
+  evt-api:
+     build:
+      context: .
+      dockerfile: Dockerfile
+     ports:
+      - "9080:80"
+     environment:
+      TZ: Asia/Kolkata
+     volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+ 
