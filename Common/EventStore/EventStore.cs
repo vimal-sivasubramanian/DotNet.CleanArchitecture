@@ -22,9 +22,9 @@ namespace DotNet.EventSourcing.Common.EventStore.Services
         public Task AppendAsync(EventBase @event)
         {
             return _client.AppendToStreamAsync(@event.Type,
-                StreamState.NoStream,
+                StreamState.Any,
                 new List<EventData> {
-                    new EventData( Uuid.NewUuid(), @event.EventName, Encoding.UTF8.GetBytes(@event.Payload))
+                    new EventData(Uuid.NewUuid(), @event.EventName, Encoding.UTF8.GetBytes(@event.Payload))
                 });
         }
 

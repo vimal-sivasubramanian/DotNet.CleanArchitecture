@@ -1,7 +1,7 @@
 ﻿using DotNet.EventSourcing.Common.EventStore;
 using Microsoft.Extensions.Hosting;
 
-namespace EventsStorage
+namespace Events.Storage
 {
     public class Program
     {

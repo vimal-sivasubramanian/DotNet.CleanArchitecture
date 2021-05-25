@@ -1,10 +1,12 @@
 using DotNet.EventSourcing.Core;
 using DotNet.EventSourcing.Core.Events;
 using DotNet.EventSourcing.Core.Interfaces;
+using DotNet.EventSourcing.Core.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
+using System;
 
-namespace EventsStorage
+namespace Events.Storage
 {
     public class EventStorage
     {
@@ -18,12 +20,12 @@ namespace EventsStorage
         [Function(nameof(EventStorage))]
         public void Run([EventHubTrigger("vs-eventsourcing-eventhub", Connection = "EventHubConnectionString")] string[] messages, FunctionContext context)
         {
-            var logger = context.GetLogger("KafkaFunction");
+            var logger = context.GetLogger("EventStorage");
             foreach (var message in messages)
             {
                 logger.LogDebug($"C# Kafka trigger function processed a message: {message}");
 
-                _eventStore.AppendAsync(message.To<EventBase>()).GetAwaiter().GetResult();
+                _eventStore.AppendAsync(message.To<Message<Guid, EventBase>>().Value).GetAwaiter().GetResult();
             }
         }
     }

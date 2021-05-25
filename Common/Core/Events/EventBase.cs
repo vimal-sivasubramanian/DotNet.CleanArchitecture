@@ -2,7 +2,7 @@
 
 namespace DotNet.EventSourcing.Core.Events
 {
-    public abstract class EventBase
+    public class EventBase
     {
         public string EventName { get; set; }
 
