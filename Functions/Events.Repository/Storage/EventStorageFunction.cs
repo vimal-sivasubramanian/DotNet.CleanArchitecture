@@ -6,18 +6,18 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Events.Storage
+namespace Events.Repository.Storage
 {
-    public class EventStorage
+    public class EventStorageFunction
     {
         private readonly IEventStore _eventStore;
 
-        public EventStorage(IEventStore eventStore)
+        public EventStorageFunction(IEventStore eventStore)
         {
             _eventStore = eventStore;
         }
 
-        [Function(nameof(EventStorage))]
+        [Function(nameof(EventStorageFunction))]
         public void Run([EventHubTrigger("vs-eventsourcing-eventhub", Connection = "EventHubConnectionString")] string[] messages, FunctionContext context)
         {
             var logger = context.GetLogger("EventStorage");

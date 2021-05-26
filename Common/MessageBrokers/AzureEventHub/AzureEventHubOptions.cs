@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DotNet.EventSourcing.MessageBrokers.AzureEventHub
+﻿namespace DotNet.EventSourcing.MessageBrokers.AzureEventHub
 {
     public class AzureEventHubOptions
     {

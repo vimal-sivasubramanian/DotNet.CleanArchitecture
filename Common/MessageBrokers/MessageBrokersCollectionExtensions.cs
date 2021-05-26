@@ -118,29 +118,26 @@ namespace Microsoft.Extensions.DependencyInjection
 
         public static IServiceCollection AddMessageBusReceiver<TKey, TValue>(this IServiceCollection services, MessageBrokerOptions options)
         {
-            if (options.UsedRabbitMQ())
+            switch (options.Provider)
             {
-                services.AddRabbitMQReceiver<TKey, TValue>(options.RabbitMQ);
-            }
-            else if (options.UsedKafka())
-            {
-                services.AddKafkaReceiver<TKey, TValue>(options.Kafka);
-            }
-            else if (options.UsedAzureQueue())
-            {
-                services.AddAzureQueueReceiver<TKey, TValue>(options.AzureQueue);
-            }
-            else if (options.UsedAzureServiceBus())
-            {
-                services.AddAzureServiceBusReceiver<TKey, TValue>(options.AzureServiceBus);
-            }
-            else if (options.UsedAzureEventHub())
-            {
-                services.AddAzureEventHubReceiver<TKey, TValue>(options.AzureEventHub);
-            }
-            else if (options.UsedFake())
-            {
-                services.AddFakeReceiver<TKey, TValue>();
+                case "RabbitMQ":
+                    services.AddRabbitMQReceiver<TKey, TValue>(options.RabbitMQ);
+                    break;
+                case "Kafka":
+                    services.AddKafkaReceiver<TKey, TValue>(options.Kafka);
+                    break;
+                case "AzureQueue":
+                    services.AddAzureQueueReceiver<TKey, TValue>(options.AzureQueue);
+                    break;
+                case "AzureServiceBus":
+                    services.AddAzureServiceBusReceiver<TKey, TValue>(options.AzureServiceBus);
+                    break;
+                case "AzureEventHub":
+                    services.AddAzureEventHubReceiver<TKey, TValue>(options.AzureEventHub);
+                    break;
+                case "Fake":
+                    services.AddFakeReceiver<TKey, TValue>();
+                    break;
             }
 
             return services;
@@ -148,29 +145,26 @@ namespace Microsoft.Extensions.DependencyInjection
 
         public static IServiceCollection AddMessageBusSender<TKey, TValue>(this IServiceCollection services, MessageBrokerOptions options)
         {
-            if (options.UsedRabbitMQ())
+            switch (options.Provider)
             {
-                services.AddRabbitMQSender<TKey, TValue>(options.RabbitMQ);
-            }
-            else if (options.UsedKafka())
-            {
-                services.AddKafkaSender<TKey, TValue>(options.Kafka);
-            }
-            else if (options.UsedAzureQueue())
-            {
-                services.AddAzureQueueSender<TKey, TValue>(options.AzureQueue);
-            }
-            else if (options.UsedAzureServiceBus())
-            {
-                services.AddAzureServiceBusSender<TKey, TValue>(options.AzureServiceBus);
-            }
-            else if (options.UsedAzureEventHub())
-            {
-                services.AddAzureEventHubSender<TKey, TValue>(options.AzureEventHub);
-            }
-            else if (options.UsedFake())
-            {
-                services.AddFakeSender<TKey, TValue>();
+                case "RabbitMQ":
+                    services.AddRabbitMQSender<TKey, TValue>(options.RabbitMQ);
+                    break;
+                case "Kafka":
+                    services.AddKafkaSender<TKey, TValue>(options.Kafka);
+                    break;
+                case "AzureQueue":
+                    services.AddAzureQueueSender<TKey, TValue>(options.AzureQueue);
+                    break;
+                case "AzureServiceBus":
+                    services.AddAzureServiceBusSender<TKey, TValue>(options.AzureServiceBus);
+                    break;
+                case "AzureEventHub":
+                    services.AddAzureEventHubSender<TKey, TValue>(options.AzureEventHub);
+                    break;
+                case "Fake":
+                    services.AddFakeSender<TKey, TValue>();
+                    break;
             }
 
             return services;

@@ -1,5 +1,4 @@
 ﻿using Confluent.Kafka;
-using Confluent.SchemaRegistry.Serdes;
 using DotNet.EventSourcing.Core;
 using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
 using System;

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DotNet.EventSourcing.MessageBrokers.AzureQueue
+﻿namespace DotNet.EventSourcing.MessageBrokers.AzureQueue
 {
     public class AzureQueueOptions
     {

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DotNet.EventSourcing.MessageBrokers.AzureServiceBus
+﻿namespace DotNet.EventSourcing.MessageBrokers.AzureServiceBus
 {
     public class AzureServiceBusOptions
     {

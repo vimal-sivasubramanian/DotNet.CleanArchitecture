@@ -19,35 +19,5 @@ namespace DotNet.EventSourcing.MessageBrokers
         public AzureServiceBusOptions AzureServiceBus { get; set; }
 
         public AzureEventHubOptions AzureEventHub { get; set; }
-
-        public bool UsedRabbitMQ()
-        {
-            return Provider == "RabbitMQ";
-        }
-
-        public bool UsedKafka()
-        {
-            return Provider == "Kafka";
-        }
-
-        public bool UsedAzureQueue()
-        {
-            return Provider == "AzureQueue";
-        }
-
-        public bool UsedAzureServiceBus()
-        {
-            return Provider == "AzureServiceBus";
-        }
-
-        public bool UsedAzureEventHub()
-        {
-            return Provider == "AzureEventHub";
-        }
-
-        public bool UsedFake()
-        {
-            return Provider == "Fake";
-        }
     }
 }

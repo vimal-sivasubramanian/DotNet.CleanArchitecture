@@ -10,6 +10,8 @@ namespace DotNet.EventSourcing.Core.Events
 
         public string Payload { get; set; }
 
+        public string CorrelationId { get; set; }
+
         public DateTime OccurredAt { get; set; } = DateTime.UtcNow;
     }
 }

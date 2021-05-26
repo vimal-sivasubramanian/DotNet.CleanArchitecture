@@ -1,0 +1,8 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "EventHubConnectionString": "Endpoint=sb://vs-eventsourcing.servicebus.windows.net/;SharedAccessKeyName=SendRecieveEvents;SharedAccessKey=fXAaPtdssza9E98CSdcUxbmstuzgQ7qIh+lQ7reAqho="
+  }
+}

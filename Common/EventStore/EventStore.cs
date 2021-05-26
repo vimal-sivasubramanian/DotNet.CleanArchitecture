@@ -3,6 +3,7 @@ using DotNet.EventSourcing.Core.Interfaces;
 using EventStore.Client;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,11 +22,16 @@ namespace DotNet.EventSourcing.Common.EventStore.Services
 
         public Task AppendAsync(EventBase @event)
         {
-            return _client.AppendToStreamAsync(@event.Type,
+            return _client.AppendToStreamAsync($"{@event.Type}.{@event.CorrelationId}",
                 StreamState.Any,
                 new List<EventData> {
                     new EventData(Uuid.NewUuid(), @event.EventName, Encoding.UTF8.GetBytes(@event.Payload))
                 });
+        }
+
+        public Task<IAsyncEnumerable<EventBase>> ReadAsync(string entityName, string id)
+        {
+            return Task.FromResult(AsyncEnumerable.Empty<EventBase>());
         }
 
         public void Dispose() => _client?.Dispose();

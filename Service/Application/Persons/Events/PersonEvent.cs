@@ -15,6 +15,7 @@ namespace DotNet.EventSourcing.Service.Application.Persons.Events
         {
             EventName = eventName;
             Payload = person.ToJson();
+            CorrelationId = person.Id.ToString();
             Type = nameof(Person);
         }
     }
