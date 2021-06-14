@@ -1,9 +1,9 @@
-﻿using DotNet.EventSourcing.Core.Events;
-using DotNet.EventSourcing.Core.Interfaces;
-using DotNet.EventSourcing.MessageBrokers;
-using DotNet.EventSourcing.Service.Application.Interfaces;
-using DotNet.EventSourcing.Service.Infrastructure.Persistence;
-using DotNet.EventSourcing.Service.Infrastructure.Services;
+﻿using DotNet.CleanArchitecture.Core.Events;
+using DotNet.CleanArchitecture.Core.Interfaces;
+using DotNet.CleanArchitecture.MessageBrokers;
+using DotNet.CleanArchitecture.Service.Application.Interfaces;
+using DotNet.CleanArchitecture.Service.Infrastructure.Persistence;
+using DotNet.CleanArchitecture.Service.Infrastructure.Services;
 using Hangfire;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace DotNet.EventSourcing.Service.Infrastructure
+namespace DotNet.CleanArchitecture.Service.Infrastructure
 {
     public static class DependencyInjection
     {

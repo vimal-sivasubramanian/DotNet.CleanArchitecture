@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace DotNet.EventSourcing.Core
+namespace DotNet.CleanArchitecture.Core
 {
     public static class JsonExtensions
     {

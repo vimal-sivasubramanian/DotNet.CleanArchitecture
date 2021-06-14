@@ -1,9 +1,9 @@
-﻿using DotNet.EventSourcing.Service.Domain.Entities;
+﻿using DotNet.CleanArchitecture.Service.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Service.Application.Interfaces
+namespace DotNet.CleanArchitecture.Service.Application.Interfaces
 {
     public interface IApplicationDbContext
     {

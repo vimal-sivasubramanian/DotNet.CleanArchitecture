@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Service.Application.IdentityCards.Commands.CreateIdentityCard
+namespace DotNet.CleanArchitecture.Service.Application.IdentityCards.Commands.CreateIdentityCard
 {
     public class CreateIdentityCardCommand : IRequest
     {

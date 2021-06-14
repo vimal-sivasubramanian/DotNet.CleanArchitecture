@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace DotNet.EventSourcing.Service.Api
+namespace DotNet.CleanArchitecture.Service.Api
 {
     public class Program
     {

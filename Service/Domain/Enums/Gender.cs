@@ -1,4 +1,4 @@
-﻿namespace DotNet.EventSourcing.Service.Domain.Enums
+﻿namespace DotNet.CleanArchitecture.Service.Domain.Enums
 {
     public enum Gender
     {

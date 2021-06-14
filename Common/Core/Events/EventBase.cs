@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNet.EventSourcing.Core.Events
+namespace DotNet.CleanArchitecture.Core.Events
 {
     public class EventBase
     {

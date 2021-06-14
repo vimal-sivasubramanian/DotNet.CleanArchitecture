@@ -1,6 +1,6 @@
-﻿using DotNet.EventSourcing.Service.Domain.Enums;
+﻿using DotNet.CleanArchitecture.Service.Domain.Enums;
 
-namespace DotNet.EventSourcing.Service.Domain.Entities
+namespace DotNet.CleanArchitecture.Service.Domain.Entities
 {
     public class Person
     {

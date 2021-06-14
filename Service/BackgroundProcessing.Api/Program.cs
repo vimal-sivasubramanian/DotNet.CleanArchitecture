@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace DotNet.EventSourcing.Service.BackgroundProcessing.Api
+namespace DotNet.CleanArchitecture.Service.BackgroundProcessing.Api
 {
     public class Program
     {

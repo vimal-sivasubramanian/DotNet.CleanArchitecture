@@ -1,4 +1,4 @@
-﻿namespace DotNet.EventSourcing.MessageBrokers.AzureServiceBus
+﻿namespace DotNet.CleanArchitecture.MessageBrokers.AzureServiceBus
 {
     public class AzureServiceBusOptions
     {

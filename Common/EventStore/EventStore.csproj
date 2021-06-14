@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<RootNamespace>DotNet.EventSourcing.EventStore</RootNamespace>
+		<RootNamespace>DotNet.CleanArchitecture.EventStore</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DotNet.EventSourcing.Core.Models
+namespace DotNet.CleanArchitecture.Core.Models
 {
     public class Message<TKey, TValue>
     {

@@ -1,6 +1,6 @@
-using DotNet.EventSourcing.Service.Application;
-using DotNet.EventSourcing.Service.Infrastructure;
-using DotNet.EventSourcing.Service.Infrastructure.Persistence;
+using DotNet.CleanArchitecture.Service.Application;
+using DotNet.CleanArchitecture.Service.Infrastructure;
+using DotNet.CleanArchitecture.Service.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace DotNet.EventSourcing.Service.Api
+namespace DotNet.CleanArchitecture.Service.Api
 {
     public class Startup
     {

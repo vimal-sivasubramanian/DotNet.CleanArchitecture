@@ -1,8 +1,8 @@
-﻿using DotNet.EventSourcing.Service.Application.Interfaces;
-using DotNet.EventSourcing.Service.Domain.Entities;
+﻿using DotNet.CleanArchitecture.Service.Application.Interfaces;
+using DotNet.CleanArchitecture.Service.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNet.EventSourcing.Service.Infrastructure.Persistence
+namespace DotNet.CleanArchitecture.Service.Infrastructure.Persistence
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {

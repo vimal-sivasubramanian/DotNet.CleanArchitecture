@@ -1,8 +1,8 @@
-﻿using DotNet.EventSourcing.Core.Interfaces;
+﻿using DotNet.CleanArchitecture.Core.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using EventStoreImpl = DotNet.EventSourcing.Common.EventStore.Services.EventStore;
+using EventStoreImpl = DotNet.CleanArchitecture.Common.EventStore.Services.EventStore;
 
-namespace DotNet.EventSourcing.Common.EventStore
+namespace DotNet.CleanArchitecture.Common.EventStore
 {
     public static class DependencyInjection
     {

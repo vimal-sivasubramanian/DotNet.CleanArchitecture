@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace DotNet.EventSourcing.Service.Application.Persons.Commands.CreatePerson
+namespace DotNet.CleanArchitecture.Service.Application.Persons.Commands.CreatePerson
 {
     public class CreatePersonCommandValidator : AbstractValidator<CreatePersonCommand>
     {

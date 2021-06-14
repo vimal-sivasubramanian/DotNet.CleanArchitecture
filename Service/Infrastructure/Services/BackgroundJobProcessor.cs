@@ -1,9 +1,9 @@
-﻿using DotNet.EventSourcing.Core;
-using DotNet.EventSourcing.Core.Interfaces;
+﻿using DotNet.CleanArchitecture.Core;
+using DotNet.CleanArchitecture.Core.Interfaces;
 using Hangfire;
 using MediatR;
 
-namespace DotNet.EventSourcing.Service.Infrastructure.Services
+namespace DotNet.CleanArchitecture.Service.Infrastructure.Services
 {
     internal class BackgroundJobProcessor : IBackgroundJobProcessor<IRequest>
     {

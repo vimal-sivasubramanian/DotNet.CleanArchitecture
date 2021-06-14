@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace DotNet.EventSourcing.Service.Application.Interfaces
+namespace DotNet.CleanArchitecture.Service.Application.Interfaces
 {
     public interface IBackgroundJobScheduler
     {

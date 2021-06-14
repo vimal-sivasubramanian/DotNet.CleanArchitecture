@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DotNet.EventSourcing.Service.Infrastructure.Persistence.Migrations
+namespace DotNet.CleanArchitecture.Service.Infrastructure.Persistence.Migrations
 {
     public partial class PersonMigration : Migration
     {

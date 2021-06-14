@@ -1,12 +1,12 @@
-﻿using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
-using DotNet.EventSourcing.Core.Models;
+﻿using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.Core.Models;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
 using System.Text;
 
-namespace DotNet.EventSourcing.MessageBrokers.RabbitMQ
+namespace DotNet.CleanArchitecture.MessageBrokers.RabbitMQ
 {
     public class RabbitMQReceiver<TKey, TValue> : IMessageReceiver<TKey, TValue>, IDisposable
     {

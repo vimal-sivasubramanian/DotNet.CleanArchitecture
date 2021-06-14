@@ -1,8 +1,8 @@
-﻿using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
+﻿using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.MessageBrokers.Fake
+namespace DotNet.CleanArchitecture.MessageBrokers.Fake
 {
     public class FakeSender<TKey, TValue> : IMessageSender<TKey, TValue>
     {

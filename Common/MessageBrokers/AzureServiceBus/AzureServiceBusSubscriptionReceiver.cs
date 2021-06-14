@@ -1,5 +1,5 @@
-﻿using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
-using DotNet.EventSourcing.Core.Models;
+﻿using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.Core.Models;
 using Microsoft.Azure.ServiceBus;
 using Newtonsoft.Json;
 using System;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.MessageBrokers.AzureServiceBus
+namespace DotNet.CleanArchitecture.MessageBrokers.AzureServiceBus
 {
     public class AzureServiceBusSubscriptionReceiver<TKey, TValue> : IMessageReceiver<TKey, TValue>
     {

@@ -1,8 +1,8 @@
-﻿using DotNet.EventSourcing.Service.Domain.Entities;
+﻿using DotNet.CleanArchitecture.Service.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DotNet.EventSourcing.Service.Infrastructure.Persistence.Configurations
+namespace DotNet.CleanArchitecture.Service.Infrastructure.Persistence.Configurations
 {
     public class PersonConfiguration : IEntityTypeConfiguration<Person>
     {

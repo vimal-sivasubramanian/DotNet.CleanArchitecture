@@ -1,4 +1,4 @@
-﻿using DotNet.EventSourcing.Common.EventStore;
+﻿using DotNet.CleanArchitecture.Common.EventStore;
 using Microsoft.Extensions.Hosting;
 
 namespace Events.Repository

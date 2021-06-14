@@ -1,5 +1,5 @@
-using DotNet.EventSourcing.Core;
-using DotNet.EventSourcing.Core.Interfaces;
+using DotNet.CleanArchitecture.Core;
+using DotNet.CleanArchitecture.Core.Interfaces;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Newtonsoft.Json;

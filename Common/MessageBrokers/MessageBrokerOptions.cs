@@ -1,10 +1,10 @@
-﻿using DotNet.EventSourcing.MessageBrokers.AzureEventHub;
-using DotNet.EventSourcing.MessageBrokers.AzureQueue;
-using DotNet.EventSourcing.MessageBrokers.AzureServiceBus;
-using DotNet.EventSourcing.MessageBrokers.Kafka;
-using DotNet.EventSourcing.MessageBrokers.RabbitMQ;
+﻿using DotNet.CleanArchitecture.MessageBrokers.AzureEventHub;
+using DotNet.CleanArchitecture.MessageBrokers.AzureQueue;
+using DotNet.CleanArchitecture.MessageBrokers.AzureServiceBus;
+using DotNet.CleanArchitecture.MessageBrokers.Kafka;
+using DotNet.CleanArchitecture.MessageBrokers.RabbitMQ;
 
-namespace DotNet.EventSourcing.MessageBrokers
+namespace DotNet.CleanArchitecture.MessageBrokers
 {
     public class MessageBrokerOptions
     {

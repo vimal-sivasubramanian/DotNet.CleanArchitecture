@@ -1,4 +1,4 @@
-﻿namespace DotNet.EventSourcing.MessageBrokers.AzureQueue
+﻿namespace DotNet.CleanArchitecture.MessageBrokers.AzureQueue
 {
     public class AzureQueueOptions
     {

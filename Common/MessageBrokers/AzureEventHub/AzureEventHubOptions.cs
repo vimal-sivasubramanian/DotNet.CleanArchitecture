@@ -1,4 +1,4 @@
-﻿namespace DotNet.EventSourcing.MessageBrokers.AzureEventHub
+﻿namespace DotNet.CleanArchitecture.MessageBrokers.AzureEventHub
 {
     public class AzureEventHubOptions
     {

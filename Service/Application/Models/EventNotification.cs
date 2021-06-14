@@ -1,7 +1,7 @@
-﻿using DotNet.EventSourcing.Core.Events;
+﻿using DotNet.CleanArchitecture.Core.Events;
 using MediatR;
 
-namespace DotNet.EventSourcing.Service.Application.Models
+namespace DotNet.CleanArchitecture.Service.Application.Models
 {
     public class EventNotification<TEvent> : INotification where TEvent : EventBase
     {

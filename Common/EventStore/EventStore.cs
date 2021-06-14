@@ -1,5 +1,5 @@
-﻿using DotNet.EventSourcing.Core.Events;
-using DotNet.EventSourcing.Core.Interfaces;
+﻿using DotNet.CleanArchitecture.Core.Events;
+using DotNet.CleanArchitecture.Core.Interfaces;
 using EventStore.Client;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Common.EventStore.Services
+namespace DotNet.CleanArchitecture.Common.EventStore.Services
 {
     internal class EventStore : IEventStore, IDisposable
     {

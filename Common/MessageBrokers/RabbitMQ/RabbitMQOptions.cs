@@ -1,4 +1,4 @@
-﻿namespace DotNet.EventSourcing.MessageBrokers.RabbitMQ
+﻿namespace DotNet.CleanArchitecture.MessageBrokers.RabbitMQ
 {
     public class RabbitMQOptions
     {

@@ -1,12 +1,12 @@
 ﻿using Azure.Messaging.EventHubs.Consumer;
-using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
-using DotNet.EventSourcing.Core.Models;
+using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.Core.Models;
 using Newtonsoft.Json;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.MessageBrokers.AzureEventHub
+namespace DotNet.CleanArchitecture.MessageBrokers.AzureEventHub
 {
     public class AzureEventHubReceiver<TKey, TValue> : IMessageReceiver<TKey, TValue>
     {

@@ -1,8 +1,8 @@
-﻿using DotNet.EventSourcing.Core.Events;
+﻿using DotNet.CleanArchitecture.Core.Events;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Core.Interfaces
+namespace DotNet.CleanArchitecture.Core.Interfaces
 {
     public interface IEventStore
     {

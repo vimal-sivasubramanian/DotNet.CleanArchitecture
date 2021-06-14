@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ValidationException = DotNet.EventSourcing.Service.Application.Exceptions.ValidationException;
+using ValidationException = DotNet.CleanArchitecture.Service.Application.Exceptions.ValidationException;
 
-namespace DotNet.EventSourcing.Service.Application.Behaviours
+namespace DotNet.CleanArchitecture.Service.Application.Behaviours
 {
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>

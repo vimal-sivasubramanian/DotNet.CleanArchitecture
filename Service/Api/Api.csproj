@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<RootNamespace>DotNet.EventSourcing.Service.Api</RootNamespace>
+		<RootNamespace>DotNet.CleanArchitecture.Service.Api</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

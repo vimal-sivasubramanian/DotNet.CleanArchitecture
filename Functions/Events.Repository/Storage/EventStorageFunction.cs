@@ -1,7 +1,7 @@
-using DotNet.EventSourcing.Core;
-using DotNet.EventSourcing.Core.Events;
-using DotNet.EventSourcing.Core.Interfaces;
-using DotNet.EventSourcing.Core.Models;
+using DotNet.CleanArchitecture.Core;
+using DotNet.CleanArchitecture.Core.Events;
+using DotNet.CleanArchitecture.Core.Interfaces;
+using DotNet.CleanArchitecture.Core.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using System;

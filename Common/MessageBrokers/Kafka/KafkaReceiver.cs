@@ -1,11 +1,11 @@
 ﻿using Confluent.Kafka;
-using DotNet.EventSourcing.Core;
-using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.Core;
+using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.MessageBrokers.Kafka
+namespace DotNet.CleanArchitecture.MessageBrokers.Kafka
 {
     public class KafkaReceiver<TKey, TValue> : IMessageReceiver<TKey, TValue>, IDisposable
     {

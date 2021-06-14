@@ -1,10 +1,10 @@
-﻿using DotNet.EventSourcing.Core.Interfaces;
-using DotNet.EventSourcing.Service.Application.Interfaces;
+﻿using DotNet.CleanArchitecture.Core.Interfaces;
+using DotNet.CleanArchitecture.Service.Application.Interfaces;
 using Hangfire;
 using Hangfire.States;
 using MediatR;
 
-namespace DotNet.EventSourcing.Service.Infrastructure.Services
+namespace DotNet.CleanArchitecture.Service.Infrastructure.Services
 {
     internal class HangfireBackgroundJobScheduler : IBackgroundJobScheduler
     {

@@ -1,5 +1,5 @@
-using DotNet.EventSourcing.Service.Application;
-using DotNet.EventSourcing.Service.Infrastructure;
+using DotNet.CleanArchitecture.Service.Application;
+using DotNet.CleanArchitecture.Service.Infrastructure;
 using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DotNet.EventSourcing.Service.BackgroundProcessing.Api
+namespace DotNet.CleanArchitecture.Service.BackgroundProcessing.Api
 {
     public class Startup
     {

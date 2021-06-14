@@ -1,4 +1,4 @@
-﻿namespace DotNet.EventSourcing.MessageBrokers.Kafka
+﻿namespace DotNet.CleanArchitecture.MessageBrokers.Kafka
 {
     public class KafkaOptions
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DotNet.EventSourcing.Service.Api.Controllers
+namespace DotNet.CleanArchitecture.Service.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

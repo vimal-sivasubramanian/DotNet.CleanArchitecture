@@ -1,13 +1,13 @@
 ﻿using Azure.Messaging.EventHubs;
 using Azure.Messaging.EventHubs.Producer;
-using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
-using DotNet.EventSourcing.Core.Models;
+using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.Core.Models;
 using Newtonsoft.Json;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.MessageBrokers.AzureEventHub
+namespace DotNet.CleanArchitecture.MessageBrokers.AzureEventHub
 {
     public class AzureEventHubSender<TKey, TValue> : IMessageSender<TKey, TValue>
     {

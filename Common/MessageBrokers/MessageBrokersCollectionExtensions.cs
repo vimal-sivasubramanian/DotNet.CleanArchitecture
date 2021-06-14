@@ -1,11 +1,11 @@
-﻿using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
-using DotNet.EventSourcing.MessageBrokers;
-using DotNet.EventSourcing.MessageBrokers.AzureEventHub;
-using DotNet.EventSourcing.MessageBrokers.AzureQueue;
-using DotNet.EventSourcing.MessageBrokers.AzureServiceBus;
-using DotNet.EventSourcing.MessageBrokers.Fake;
-using DotNet.EventSourcing.MessageBrokers.Kafka;
-using DotNet.EventSourcing.MessageBrokers.RabbitMQ;
+﻿using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.MessageBrokers;
+using DotNet.CleanArchitecture.MessageBrokers.AzureEventHub;
+using DotNet.CleanArchitecture.MessageBrokers.AzureQueue;
+using DotNet.CleanArchitecture.MessageBrokers.AzureServiceBus;
+using DotNet.CleanArchitecture.MessageBrokers.Fake;
+using DotNet.CleanArchitecture.MessageBrokers.Kafka;
+using DotNet.CleanArchitecture.MessageBrokers.RabbitMQ;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

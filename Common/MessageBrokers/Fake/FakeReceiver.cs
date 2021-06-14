@@ -1,8 +1,8 @@
-﻿using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
-using DotNet.EventSourcing.Core.Models;
+﻿using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.Core.Models;
 using System;
 
-namespace DotNet.EventSourcing.MessageBrokers.Fake
+namespace DotNet.CleanArchitecture.MessageBrokers.Fake
 {
     public class FakeReceiver<TKey, TValue> : IMessageReceiver<TKey, TValue>
     {

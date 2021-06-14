@@ -1,14 +1,14 @@
-﻿using DotNet.EventSourcing.Service.Application.IdentityCards.Commands.CreateIdentityCard;
-using DotNet.EventSourcing.Service.Application.Interfaces;
-using DotNet.EventSourcing.Service.Application.Persons.Events;
-using DotNet.EventSourcing.Service.Domain.Entities;
-using DotNet.EventSourcing.Service.Domain.Enums;
+﻿using DotNet.CleanArchitecture.Service.Application.IdentityCards.Commands.CreateIdentityCard;
+using DotNet.CleanArchitecture.Service.Application.Interfaces;
+using DotNet.CleanArchitecture.Service.Application.Persons.Events;
+using DotNet.CleanArchitecture.Service.Domain.Entities;
+using DotNet.CleanArchitecture.Service.Domain.Enums;
 using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Service.Application.Persons.Commands.CreatePerson
+namespace DotNet.CleanArchitecture.Service.Application.Persons.Commands.CreatePerson
 {
     public class CreatePersonCommand : IRequest
     {

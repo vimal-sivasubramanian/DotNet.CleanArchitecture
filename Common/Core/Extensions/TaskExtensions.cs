@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Core
+namespace DotNet.CleanArchitecture.Core
 {
     public static class TaskExtensions
     {

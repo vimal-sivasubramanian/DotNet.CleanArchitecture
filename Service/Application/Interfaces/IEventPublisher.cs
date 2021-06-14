@@ -1,7 +1,7 @@
-﻿using DotNet.EventSourcing.Core.Events;
+﻿using DotNet.CleanArchitecture.Core.Events;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Service.Application.Interfaces
+namespace DotNet.CleanArchitecture.Service.Application.Interfaces
 {
 
     public interface IEventPublisher

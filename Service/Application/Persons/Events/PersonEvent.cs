@@ -1,8 +1,8 @@
-﻿using DotNet.EventSourcing.Core;
-using DotNet.EventSourcing.Core.Events;
-using DotNet.EventSourcing.Service.Domain.Entities;
+﻿using DotNet.CleanArchitecture.Core;
+using DotNet.CleanArchitecture.Core.Events;
+using DotNet.CleanArchitecture.Service.Domain.Entities;
 
-namespace DotNet.EventSourcing.Service.Application.Persons.Events
+namespace DotNet.CleanArchitecture.Service.Application.Persons.Events
 {
     public class PersonEvent : EventBase
     {

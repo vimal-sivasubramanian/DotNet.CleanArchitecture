@@ -1,4 +1,4 @@
-﻿namespace DotNet.EventSourcing.Core.Interfaces
+﻿namespace DotNet.CleanArchitecture.Core.Interfaces
 {
     public interface IBackgroundJobProcessor<in T>
     {

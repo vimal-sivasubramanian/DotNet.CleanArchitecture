@@ -1,11 +1,11 @@
 ﻿using Azure.Storage.Queues;
-using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
-using DotNet.EventSourcing.Core.Models;
+using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.Core.Models;
 using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.MessageBrokers.AzureQueue
+namespace DotNet.CleanArchitecture.MessageBrokers.AzureQueue
 {
     public class AzureQueueReceiver<TKey, TValue> : IMessageReceiver<TKey, TValue>
     {

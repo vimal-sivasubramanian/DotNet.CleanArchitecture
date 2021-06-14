@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DotNet.EventSourcing.Service.Application.Exceptions
+namespace DotNet.CleanArchitecture.Service.Application.Exceptions
 {
     public class ValidationException : Exception
     {

@@ -1,13 +1,13 @@
-﻿using DotNet.EventSourcing.Core.Events;
-using DotNet.EventSourcing.Core.Interfaces.MessageBrokers;
-using DotNet.EventSourcing.Service.Application.Interfaces;
-using DotNet.EventSourcing.Service.Application.Models;
+﻿using DotNet.CleanArchitecture.Core.Events;
+using DotNet.CleanArchitecture.Core.Interfaces.MessageBrokers;
+using DotNet.CleanArchitecture.Service.Application.Interfaces;
+using DotNet.CleanArchitecture.Service.Application.Models;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace DotNet.EventSourcing.Service.Infrastructure.Services
+namespace DotNet.CleanArchitecture.Service.Infrastructure.Services
 {
     public class EventPublisher : IEventPublisher
     {
