@@ -1,4 +1,5 @@
-﻿using DotNet.EventSourcing.Service.Application.Interfaces;
+﻿using DotNet.EventSourcing.Service.Application.IdentityCards.Commands.CreateIdentityCard;
+using DotNet.EventSourcing.Service.Application.Interfaces;
 using DotNet.EventSourcing.Service.Application.Persons.Events;
 using DotNet.EventSourcing.Service.Domain.Entities;
 using DotNet.EventSourcing.Service.Domain.Enums;
@@ -22,11 +23,13 @@ namespace DotNet.EventSourcing.Service.Application.Persons.Commands.CreatePerson
     {
         private readonly IApplicationDbContext _dbContext;
         private readonly IEventPublisher _eventPublisher;
+        private readonly IBackgroundJobScheduler _jobScheduler;
 
-        public CreatePersonHandler(IApplicationDbContext dbContext, IEventPublisher eventPublisher)
+        public CreatePersonHandler(IApplicationDbContext dbContext, IEventPublisher eventPublisher, IBackgroundJobScheduler jobScheduler)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             _eventPublisher = eventPublisher ?? throw new ArgumentNullException(nameof(eventPublisher));
+            _jobScheduler = jobScheduler ?? throw new ArgumentNullException(nameof(jobScheduler));
         }
 
         public async Task<Unit> Handle(CreatePersonCommand request, CancellationToken cancellationToken)
@@ -43,6 +46,8 @@ namespace DotNet.EventSourcing.Service.Application.Persons.Commands.CreatePerson
             await _dbContext.SaveChangesAsync(cancellationToken);
 
             await _eventPublisher.Publish(new PersonEvent(PersonEvent.Types.Created, person));
+
+            _jobScheduler.EnqueueWithHighPriority("Create national identity card", new CreateIdentityCardCommand() { PersonId = person.Id });
 
             return Unit.Value;
 
