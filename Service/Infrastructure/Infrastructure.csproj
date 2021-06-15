@@ -6,7 +6,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Hangfire" Version="1.7.23" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
@@ -14,6 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\Common\BackgroundJobs\BackgroundJobs.csproj" />
 		<ProjectReference Include="..\..\Common\EventStore\EventStore.csproj" />
 		<ProjectReference Include="..\..\Common\MessageBrokers\MessageBrokers.csproj" />
 		<ProjectReference Include="..\Application\Application.csproj" />

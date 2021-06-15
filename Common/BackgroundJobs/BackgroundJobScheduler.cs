@@ -1,16 +1,15 @@
 ﻿using DotNet.CleanArchitecture.Core.Interfaces;
-using DotNet.CleanArchitecture.Service.Application.Interfaces;
 using Hangfire;
 using Hangfire.States;
 using MediatR;
 
-namespace DotNet.CleanArchitecture.Service.Infrastructure.Services
+namespace DotNet.CleanArchitecture.Common.BackgroundJobs
 {
-    internal class HangfireBackgroundJobScheduler : IBackgroundJobScheduler
+    internal class BackgroundJobScheduler : IBackgroundJobScheduler<IRequest>
     {
         private readonly IBackgroundJobProcessor<IRequest> _jobProcessor;
 
-        public HangfireBackgroundJobScheduler(IBackgroundJobProcessor<IRequest> jobProcessor) => _jobProcessor = jobProcessor;
+        public BackgroundJobScheduler(IBackgroundJobProcessor<IRequest> jobProcessor) => _jobProcessor = jobProcessor;
 
         public void EnqueueWithHighPriority(string jobName, IRequest request)
         {

@@ -1,4 +1,5 @@
-﻿using DotNet.CleanArchitecture.Service.Application.IdentityCards.Commands.CreateIdentityCard;
+﻿using DotNet.CleanArchitecture.Core.Interfaces;
+using DotNet.CleanArchitecture.Service.Application.IdentityCards.Commands.CreateIdentityCard;
 using DotNet.CleanArchitecture.Service.Application.Interfaces;
 using DotNet.CleanArchitecture.Service.Application.Persons.Events;
 using DotNet.CleanArchitecture.Service.Domain.Entities;
@@ -23,9 +24,9 @@ namespace DotNet.CleanArchitecture.Service.Application.Persons.Commands.CreatePe
     {
         private readonly IApplicationDbContext _dbContext;
         private readonly IEventPublisher _eventPublisher;
-        private readonly IBackgroundJobScheduler _jobScheduler;
+        private readonly IBackgroundJobScheduler<IRequest> _jobScheduler;
 
-        public CreatePersonHandler(IApplicationDbContext dbContext, IEventPublisher eventPublisher, IBackgroundJobScheduler jobScheduler)
+        public CreatePersonHandler(IApplicationDbContext dbContext, IEventPublisher eventPublisher, IBackgroundJobScheduler<IRequest> jobScheduler)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             _eventPublisher = eventPublisher ?? throw new ArgumentNullException(nameof(eventPublisher));

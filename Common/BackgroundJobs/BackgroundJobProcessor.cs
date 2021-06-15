@@ -3,7 +3,7 @@ using DotNet.CleanArchitecture.Core.Interfaces;
 using Hangfire;
 using MediatR;
 
-namespace DotNet.CleanArchitecture.Service.Infrastructure.Services
+namespace DotNet.CleanArchitecture.Common.BackgroundJobs
 {
     internal class BackgroundJobProcessor : IBackgroundJobProcessor<IRequest>
     {

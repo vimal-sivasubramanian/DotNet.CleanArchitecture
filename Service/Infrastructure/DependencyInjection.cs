@@ -1,4 +1,5 @@
-﻿using DotNet.CleanArchitecture.Core.Events;
+﻿using DotNet.CleanArchitecture.Common.BackgroundJobs;
+using DotNet.CleanArchitecture.Core.Events;
 using DotNet.CleanArchitecture.Core.Interfaces;
 using DotNet.CleanArchitecture.MessageBrokers;
 using DotNet.CleanArchitecture.Service.Application.Interfaces;
@@ -17,12 +18,6 @@ namespace DotNet.CleanArchitecture.Service.Infrastructure
     {
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddHangfire(_ => { });
-
-            GlobalConfiguration.Configuration
-                .UseSqlServerStorage(configuration.GetConnectionString("HangfireDb"))
-                .UseRecommendedSerializerSettings();
-
             services.AddDbContext<ApplicationDbContext>(options =>
                        options.UseSqlServer(
                            configuration.GetConnectionString("DefaultConnection"),
@@ -35,8 +30,7 @@ namespace DotNet.CleanArchitecture.Service.Infrastructure
             if (messageBrokerOptions is not null)
                 services.AddMessageBusSender<Guid, EventBase>(messageBrokerOptions);
 
-            services.AddScoped<IBackgroundJobScheduler, HangfireBackgroundJobScheduler>();
-            services.AddScoped<IBackgroundJobProcessor<IRequest>, BackgroundJobProcessor>();
+            services.AddBackgroundJobs(configuration);
         }
     }
 }
